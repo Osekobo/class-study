@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Js Practice</h1>
+    <script>
+      // task 1
+      let num = 7;
+
+      if (num % 2 === 0) {
+        console.log("Number is even");
+      } else {
+        console.log("Number is odd");
+      }
+
+      // task 2
+      let age = prompt("Enter age: ");
+
+      age = Number(age);
+
+      if (age >= 18) {
+        console.log("You are old enough to drive");
+      } else {
+        left = 18 - age
+        console.log("You are not old enough to drive");
+        // console.log(`you have to wait ${}`)
+      } 
+
+      // task 3
+      let grade = 55;
+      if (grade >= 80 && grade <= 100) {
+        console.log("A");
+      } else if (grade >= 70 && grade <= 80) {
+        console.log("B");
+      } else if (grade >= 60 && grade <= 69) {
+        console.log("C");
+      } else if (grade >= 50 && grade <= 59) {
+        console.log("D");
+      } else if (grade >= 0 && grade <= 49) {
+        console.log("F");
+      } else {
+        console.log("Invalid score");
+      }
+
+      // task 4
+      let month = "June";
+      if (
+        month === "September" ||
+        month === "October" ||
+        month === "November"
+      ) {
+        console.log("Autumn");
+      } else if (
+        month === "December" ||
+        month === "January" ||
+        month === "February"
+      ) {
+        console.log("Winter");
+      } else if (month === "March" || month === "April" || month === "May") {
+        console.log("Spring");
+      } else if (month === "June" || month === "July" || month === "August") {
+        console.log("Summer");
+      } else {
+        console.log("Invalid Month");
+      }
+    </script>
+  </body>
+</html>
