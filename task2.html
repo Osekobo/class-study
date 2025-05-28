@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <h1>Task</h1>
+  <body>
+    <script>
+      // task 2
+      function function_arrange(x) {
+        let y = x.toString().split("").sort().join("");
+        console.log(y);
+      }
+      function_arrange("boychild");
+
+      // task 3
+      function function_upper(n) {
+        if (n.length === 0) return n;
+        let j = n.charAt(0).toUpperCase() + n.slice(1);
+        console.log(j);
+      }
+      function_upper("boychild");
+      // task 4
+      function function_cal(g, r) {
+        let mult = g * r;
+        let divi = g / r;
+        console.log(mult);
+        console.log(divi);
+      }
+      function_cal(5, 4);
+      // task 5
+      function larger(s, v) {
+        if (s > v) {
+          console.log(s);
+        } else if (v > s) {
+          console.log(v);
+        } else if ((s = v)) {
+          console.log("Both numbers are equal");
+        } else {
+          console.log("Invalid input");
+        }
+      }
+      larger(5, 5);
+      // task 6
+    </script>
+  </body>
+</html>

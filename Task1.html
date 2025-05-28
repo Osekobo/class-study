@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <h1>TASK 1</h1>
+  <body>
+    <script>
+      // 1 Write a program that prompts the user to enter the base and height of a triangle and returns its area.
+
+      function area() {
+        let b = prompt("enter base: ");
+        let h = prompt("enter height: ");
+        area = b * h;
+        console.log(area);
+      }
+      area();
+      // 2 Prompt the user for a number either on a form input or the terminal. Depending on whether the number is even or odd, display  either “odd” or “even” to the user.
+
+      function even() {
+        let e = prompt("enter first number: ");
+        if (e % 2 == 0) {
+          console.log("Even number");
+        } else if (e % 2 != 0) {
+          console.log("Odd number");
+        } else {
+          console.log("Invalid input");
+        }
+      }
+      even();
+      // 3 Write a program which gets a phone number from a form input or terminal. Validates the phone number by checking if it starts with +254.. or 07.. or 7… or 254.. or 01... or  1.. Convert the number to start with +254…  e.g if a user enters “0712345678”, the program should display “+254712345678” e.g if a user enters “0112345678”, the program should display “+254112345678” e.g if a user enters “712345678”, the program should display “+254712345678”
+
+      function number() {
+        let p = prompt("enter phone number: ");
+      }
+      // 4 Write a program which accepts email as form input or from terminal. Validate the email by checking if it's a valid email.  Hint: Check if it contains an “@” symbol and “.” symbol.
+
+      // 5 Implement a program that takes 3 users  inputs from the terminal or the Browser, and stores them in three variables. Return the largest of the three. Do this without using the the inbuilt max () function!
+
+      function larger() {
+        let a = prompt("Enter first number: ");
+        let b = prompt("Enter second number: ");
+        let c = prompt("Enter third number: ");
+        let s = a.length();
+        let t = b.length(); // not working
+        let u = c.length();
+        if (s > t && s > u) {
+          console.log("s is the largest");
+        } else if (t > s && t > u) {
+          console.log("t is the largest");
+        } else if (u > t && u > s) {
+          console.log("u is the largest");
+        } else {
+          console.log("Invalid input");
+        }
+      }
+      larger();
+      // 6 Write a program that lets the user input a password. Give them only 4 attempts to check the passwords entered against “admin@123”. If the password is correct access is granted. After you show them a message , the account is blocked
+
+      // 7  Write that prompts the user to input student marks. The input should be between 0 and 100.Then output the correct grade:  A > 79 , B - 60 to 79, C  > 49 to 59, D - 40 to 49, E - less 40
+
+      function marks(m) {
+        let m = prompt("Enter student marks: ");
+        if (m > 79 && m <= 100) {
+          console.log("A");
+        } else if (m >= 60 && m <= 79) {
+          console.log("B");
+        } else if (m > 49 && m <= 59) {
+          console.log("C");
+        } else if (m > 40 && m <= 49) {
+          console.log("D");
+        } else if (m > 0 && m <= 40) {
+          console.log("E");
+        } else {
+          console.log("Invalid marks entered");
+        }
+      }
+      marks();
+    </script>
+  </body>
+</html>
