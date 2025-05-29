@@ -9,19 +9,19 @@
   <body>
     <script>
       // 1 Write a program that prompts the user to enter the base and height of a triangle and returns its area.
-
+      let ba = Number(prompt("enter base: "));
+      let h = Number(prompt("enter height: "));
       function area() {
-        let b = prompt("enter base: ");
-        let h = prompt("enter height: ");
-        area = b * h;
+        area = ba * h;
         console.log(area);
       }
       area();
       // 2 Prompt the user for a number either on a form input or the terminal. Depending on whether the number is even or odd, display  either “odd” or “even” to the user.
-
+      let e = Number(prompt("enter first number: "));
       function even() {
-        let e = prompt("enter first number: ");
-        if (e % 2 == 0) {
+        if (e % 2 == 0 && e % 4 == 0) {
+          console.log("Even number and divisible by 4");
+        } else if (e % 2 == 0) {
           console.log("Even number");
         } else if (e % 2 != 0) {
           console.log("Odd number");
@@ -36,32 +36,59 @@
         let p = prompt("enter phone number: ");
       }
       // 4 Write a program which accepts email as form input or from terminal. Validate the email by checking if it's a valid email.  Hint: Check if it contains an “@” symbol and “.” symbol.
+      let x = prompt("Enter a valid email: ");
+      function email() {
+        if (x.includes("@") && x.includes(".")) {
+          console.log("Valid email");
+        } else {
+          console.log("Not a valid email");
+        }
+      }
+      email();
 
       // 5 Implement a program that takes 3 users  inputs from the terminal or the Browser, and stores them in three variables. Return the largest of the three. Do this without using the the inbuilt max () function!
-
+      let s = Number(prompt("Enter first number: "));
+      let t = Number(prompt("Enter second number: "));
+      let u = Number(prompt("Enter third number: "));
       function larger() {
-        let a = prompt("Enter first number: ");
-        let b = prompt("Enter second number: ");
-        let c = prompt("Enter third number: ");
-        let s = a.length();
-        let t = b.length(); // not working
-        let u = c.length();
         if (s > t && s > u) {
-          console.log("s is the largest");
+          console.log(s);
         } else if (t > s && t > u) {
-          console.log("t is the largest");
+          console.log(t);
         } else if (u > t && u > s) {
-          console.log("u is the largest");
+          console.log(u);
         } else {
           console.log("Invalid input");
         }
       }
       larger();
       // 6 Write a program that lets the user input a password. Give them only 4 attempts to check the passwords entered against “admin@123”. If the password is correct access is granted. After you show them a message , the account is blocked
+      const correctPassword = "admin@123";
+      const maxAttempts = 4;
+      let accessGranted = false;
 
+      for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+        let input = prompt("Enter your password:");
+
+        if (input === correctPassword) {
+          alert("Access granted. Welcome!");
+          accessGranted = true;
+          break; // Exit the loop if correct
+        } else if (attempt < maxAttempts) {
+          alert(
+            `Incorrect password. You have ${
+              maxAttempts - attempt
+            } attempt(s) left.`
+          );
+        }
+      }
+
+      if (!accessGranted) {
+        alert("Account blocked due to too many failed attempts.");
+      }
       // 7  Write that prompts the user to input student marks. The input should be between 0 and 100.Then output the correct grade:  A > 79 , B - 60 to 79, C  > 49 to 59, D - 40 to 49, E - less 40
 
-      function marks(m) {
+      function marks() {
         let m = prompt("Enter student marks: ");
         if (m > 79 && m <= 100) {
           console.log("A");
@@ -77,7 +104,177 @@
           console.log("Invalid marks entered");
         }
       }
-      marks();
+      marks(39);
+      // 9 Write a program called stars. It should prompt the user for a number, and it should print the number of stars till the number entered.
+      function stars(v) {
+        for (let i = 1; i <= v; i++) {
+          console.log("*".repeat(i));
+        }
+      }
+      stars();
+      // 10 Write a program that calculates the total stock in a company from the array/list below if we know that the stock is the last digit in every array/list. prods = [[‘omo’,’30kshs’,’300’], [‘milk’,’50kshs’,’200’],[‘bread’,’45kshs’,’359’], [‘coffee’,’5kshs’,’79’]] NB: ONCE YOU COPY AND PASTE THE LIST ABOVE,REWRITE THE SINGLE QUOTES AS THE ABOVE LIST WILL GIVE YOU AN ERROR.
+      prods = [
+        ["omo", "30kshs", "300"],
+        ["milk", "50kshs", "200"],
+        ["bread", "45kshs", "359"],
+        ["coffee", "5kshs", "79"],
+      ];
+      function sum() {
+        let w = prods[0][1].slice(0, 2) * prods[1][2];
+        let x = prods[1][1].slice(0, 2) * prods[1][2];
+        let y = prods[2][1].slice(0, 2) * prods[1][2];
+        let z = prods[3][1].slice(0, 1) * prods[1][2];
+        let s = w + x + y + z;
+        console.log(s);
+      }
+      sum();
+      // 11 Write a program that takes the date of birth of a person and the program outputs the age in terms of years,months,days TODAY.
+      let B = "23/03/2005";
+      let D = "11/05/2025";
+      function age() {
+        let f = Math.abs(D.slice(0, 2) - B.slice(0, 2));
+        let g = Math.abs(D.slice(3, 5) - B.slice(3, 5));
+        let h = D.slice(6, 10) - B.slice(6, 10);
+        console.log(f + " Days", g + " Months", h + " Years");
+      }
+      age();
+
+      // 12 Write a program that prints the largest of 4 inputs taken as input from a user.
+      let a = Number(prompt("Enter first number: "));
+      let b = Number(prompt("Enter second number: "));
+      let c = Number(prompt("Enter third number: "));
+      let d = Number(prompt("Enter fourth number: "));
+      function largest() {
+        if (a > b && a > c && a > d) {
+          console.log(a);
+        } else if (b > a && b > c && b > d) {
+          console.log(b);
+        }
+        if (c > a && c > b && c > d) {
+          console.log(c);
+        }
+        if (d > a && d > b && d > c) {
+          console.log(d);
+        } else {
+          console.log("Invalid input");
+        }
+      }
+      largest();
+      // 13 Write a program that takes the email and password as input from a user and checks if they are equal to “admin@mail.com” and password is “Admin@123” , if so then print  “Login is Successful” and if not print “Invalid username or password”. ONLY accept 3 tries after which it notifies you that you have been blocked.
+      let correct_email = "admin@mail.com";
+      let correct_Password = "Admin@123";
+      let max_attempts = 3;
+      let login_successful = false;
+      function login() {
+        for (let attempt = 1; attempt <= max_attempts; attempt++) {
+          let input1 = prompt("Enter valid email:");
+          let input2 = prompt("Enter your password:");
+          if (input1 === correct_email && input2 == correct_Password) {
+            console.log("login success");
+            login_successful = true;
+            break;
+          } else if (attempt < max_attempts) {
+            console.log(
+              `Incorrect password. You have ${
+                max_attempts - attempt
+              } attempt(s) left.`
+            );
+          }
+        }
+        if (!login_successful) {
+          console.log("Account blocked!");
+        }
+      }
+      login();
+
+      // 15 Write a program that takes input of someone's basic salary and benefits, adds them to find the gross salary then uses  the gross salary to find the NHIF. To find the Kenya NHIF Rate using THIS LINK:
+      let basic_salary = 3000;
+      let benefits = 20000;
+      let gross = basic_salary + benefits;
+      function NHIF(basic_salary, benefits) {
+        if (gross <= 6000) {
+          console.log("NHIF IS 150");
+        } else if (gross >= 6000 && gross <= 8000) {
+          console.log("NHIF IS 300");
+        } else if (gross >= 8000 && gross <= 12000) {
+          console.log("NHIF IS 400");
+        } else if (gross >= 12000 && gross <= 15000) {
+          console.log("NHIF IS 500");
+        } else if (gross >= 15000 && gross <= 20000) {
+          console.log("NHIF IS 600");
+        } else if (gross >= 20000 && gross <= 25000) {
+          console.log("NHIF IS 750");
+        } else if (gross >= 25000 && gross <= 30000) {
+          console.log("NHIF IS 850");
+        } else if (gross >= 30000 && gross <= 35000) {
+          console.log("NHIF IS 900");
+        } else if (gross >= 35000 && gross <= 40000) {
+          console.log("NHIF IS 350");
+        } else if (gross >= 40000 && gross <= 45000) {
+          console.log("NHIF IS 1000");
+        } else if (gross >= 45000 && gross <= 50000) {
+          console.log("NHIF IS 1100");
+        } else if (gross >= 50000 && gross <= 60000) {
+          console.log("NHIF IS 1200");
+        } else if (gross >= 60000 && gross <= 70000) {
+          console.log("NHIF IS 1300");
+        } else if (gross >= 70000 && gross <= 80000) {
+          console.log("NHIF IS 1400");
+        } else if (gross >= 80000 && gross <= 90000) {
+          console.log("NHIF IS 1500");
+        } else if (gross >= 90000 && gross < 100000) {
+          console.log("NHIF IS 1600");
+        } else if (gross >= 100000) {
+          console.log("NHIF IS 1700");
+        } else {
+          console.log("Invalid input");
+        }
+      }
+      NHIF();
+
+      // 16 Continue with the program above, then use  the gross salary to find the NSSF. To find the Kenya NSSF Rate  using 6% of the Gross Salary. BUT ONLY A MINIMUM OF 18,000 Gross Salary CAN BE USED IN NSSF.
+      let NSSF = 0.66 * gross;
+      function nssf() {
+        if (gross >= 18000) {
+          console.log("NSSF IS " + NSSF);
+        } else {
+          console.log("Gross salary is below the minimum required!");
+        }
+      }
+      nssf();
+
+      // 17 Continue with the same program and calculate an individual’s NHDF using: i.e NHDF = gross_salary *  0.015
+      let NHDF = gross * 0.015;
+      console.log("NHDF IS " + NHDF);
+
+      // 18 Calculate the taxable income. i.e taxable_income = gross salary - (NSSF + NHDF + NHIF)
+      let tax = gross - (NHDF + NHDF); // NO NHIF YET
+      console.log("taxable_income is " + tax);
+
+      // 19 Continue with the same program and find the person's PAYEE using the taxable income above. Find the Kenya PAYEE Tax Rate using THIS LINK
+
+      function PAYEE() {
+        if (tax > 0 && tax < 2400) {
+          console.log("PAYEE IS 10%");
+        } else if (tax > 2400 && tax < 32333) {
+          console.log("PAYEE IS 25%");
+        } else if (tax > 32333 && tax < 500000) {
+          console.log("PAYEE IS 30%");
+        } else if (tax > 500000 && tax < 800000) {
+          console.log("PAYEE IS 32.5%");
+        } else if (tax > 800000) {
+          console.log("PAYEE IS 35%");
+        } else {
+          console.log("Invalid input");
+        }
+      }
+      PAYEE();
+
+      // 20 Continue with the same program and calculate an individual’s Net Salary using: net_salary = gross_salary - (nhif + nhdf +  nssf + payee)
+      let net = gross - (NHDF + NSSF); // payee and nhif
+      console.log(net);
+
+      // 18, 20, 14, 8, 
     </script>
   </body>
 </html>
