@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <h1>index</h1>
+  </head>
+  <body>
+    <script>
+      // 15 Write a program that takes input of someone's basic salary and benefits, adds them to find the gross salary then uses  the gross salary to find the NHIF. To find the Kenya NHIF Rate using THIS LINK:
+      let basic_salary = 3000;
+      let benefits = 20000;
+      let gross = basic_salary + benefits;
+      function NHIF(basic_salary, benefits) {
+        if (gross <= 6000) {
+          console.log("NHIF IS 150");
+        } else if (gross >= 6000 && gross <= 8000) {
+          console.log("NHIF IS 300");
+        } else if (gross >= 8000 && gross <= 12000) {
+          console.log("NHIF IS 400");
+        } else if (gross >= 12000 && gross <= 15000) {
+          console.log("NHIF IS 500");
+        } else if (gross >= 15000 && gross <= 20000) {
+          console.log("NHIF IS 600");
+        } else if (gross >= 20000 && gross <= 25000) {
+          console.log("NHIF IS 750");
+        } else if (gross >= 25000 && gross <= 30000) {
+          console.log("NHIF IS 850");
+        } else if (gross >= 30000 && gross <= 35000) {
+          console.log("NHIF IS 900");
+        } else if (gross >= 35000 && gross <= 40000) {
+          console.log("NHIF IS 350");
+        } else if (gross >= 40000 && gross <= 45000) {
+          console.log("NHIF IS 1000");
+        } else if (gross >= 45000 && gross <= 50000) {
+          console.log("NHIF IS 1100");
+        } else if (gross >= 50000 && gross <= 60000) {
+          console.log("NHIF IS 1200");
+        } else if (gross >= 60000 && gross <= 70000) {
+          console.log("NHIF IS 1300");
+        } else if (gross >= 70000 && gross <= 80000) {
+          console.log("NHIF IS 1400");
+        } else if (gross >= 80000 && gross <= 90000) {
+          console.log("NHIF IS 1500");
+        } else if (gross >= 90000 && gross < 100000) {
+          console.log("NHIF IS 1600");
+        } else if (gross >= 100000) {
+          console.log("NHIF IS 1700");
+        } else {
+          console.log("Invalid input");
+        }
+      }
+      NHIF();
+
+      // 16 Continue with the program above, then use  the gross salary to find the NSSF. To find the Kenya NSSF Rate  using 6% of the Gross Salary. BUT ONLY A MINIMUM OF 18,000 Gross Salary CAN BE USED IN NSSF.
+      let NSSF = 0.66 * gross;
+      function nssf() {
+        if (gross >= 18000) {
+          console.log("NSSF IS " + NSSF);
+        } else {
+          console.log("Gross salary is below the minimum required!");
+        }
+      }
+      nssf();
+
+      // 17 Continue with the same program and calculate an individual’s NHDF using: i.e NHDF = gross_salary *  0.015
+      let NHDF = gross * 0.015;
+      console.log("NHDF IS " + NHDF);
+
+      // 18 Calculate the taxable income. i.e taxable_income = gross salary - (NSSF + NHDF + NHIF)
+      let tax = gross - (NHDF + NHDF); // NO NHIF YET
+      console.log("taxable_income is " + tax);
+
+      // 19 Continue with the same program and find the person's PAYEE using the taxable income above. Find the Kenya PAYEE Tax Rate using THIS LINK
+
+      function PAYEE() {
+        if (tax > 0 && tax < 2400) {
+          console.log("PAYEE IS 10%");
+        } else if (tax > 2400 && tax < 32333) {
+          console.log("PAYEE IS 25%");
+        } else if (tax > 32333 && tax < 500000) {
+          console.log("PAYEE IS 30%");
+        } else if (tax > 500000 && tax < 800000) {
+          console.log("PAYEE IS 32.5%");
+        } else if (tax > 800000) {
+          console.log("PAYEE IS 35%");
+        } else {
+          console.log("Invalid input");
+        }
+      }
+      PAYEE();
+
+      // 20 Continue with the same program and calculate an individual’s Net Salary using: net_salary = gross_salary - (nhif + nhdf +  nssf + payee)
+      let net = gross - (NHDF + NSSF); // payee and nhif
+      console.log(net);
+
+      // 18, 20
+    </script>
+  </body>
+</html>
